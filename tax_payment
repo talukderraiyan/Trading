@@ -1,0 +1,32 @@
+def tax(amount):
+    limit_1 = 9325
+    limit_2 = 37950
+    limit_3 = 91900
+    limit_4 = 191900
+    limit_5 = 416700
+    limit_6 = 418400
+
+    rate_1 = 0.1
+    rate_2 = 0.15
+    rate_3 = 0.25
+    rate_4 = 0.28
+    rate_5 = 0.33
+    rate_6 = 0.35
+    rate_7 = 0.396
+
+    if amount < limit_1:
+        tax = amount * rate_1
+    elif amount < limit_2:
+        tax = rate_1*amount + rate_2 *(amount - limit_1)
+    elif amount < limit_3:
+        tax = rate_1*amount + rate_2 *(amount - limit_1) + rate_3*(amount - limit_2)
+    elif amount < limit_4:
+        tax = rate_1*amount + rate_2 *(amount - limit_1) + rate_3*(amount - limit_2) + rate_4*(amount - limit_3)
+    elif amount < limit_5:
+        tax = rate_1*amount + rate_2 *(amount - limit_1) + rate_3*(amount - limit_2) + rate_4*(amount - limit_3) + rate_5*(amount-limit_4)
+    elif amount < limit_6:
+        tax = rate_1*amount + rate_2 *(amount - limit_1) + rate_3*(amount - limit_2) + rate_4*(amount - limit_3) + rate_5*(amount-limit_4) + rate_6*(amount-limit_5)
+    elif amount > limit_6:
+        tax = rate_1*amount + rate_2 *(amount - limit_1) + rate_3*(amount - limit_2) + rate_4*(amount - limit_3) + rate_5*(amount-limit_4) + rate_6*(amount-limit_5) + rate_7*(amount - limit_6)
+
+    return tax
